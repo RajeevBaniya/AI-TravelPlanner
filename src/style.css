@@ -1,0 +1,52 @@
+.margin-t{
+    margin-top: 3.5rem;
+}
+
+.margin-top{
+    margin-top: 5rem; 
+}
+
+.margin-topp{
+    margin-top: 2.5rem; 
+}
+
+/* Negative margin to pull h2 up closer to h1 */
+h1 + h2.no-margin {
+    margin-top: -15px;
+}
+
+/* Custom button style */
+.black-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.black-button:hover {
+    background-color: #333333;
+}
+
+/* Custom Tailwind-like utility classes */
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mt-40 {
+    margin-top: 40px !important;
+}
+
+.mt-50 {
+    margin-top: 50px !important;
+}
