@@ -1,4 +1,4 @@
-# Travel AI - Your AI-Powered Travel Companion
+# Travel AI - An AI-based Travel planner
 
 ![Travel AI Banner](/public/preview.png)
 
