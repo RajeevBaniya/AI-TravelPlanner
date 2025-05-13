@@ -18,7 +18,7 @@ dist-ssr
 *.local
 build
 
-# Environment variables - IMPORTANT to avoid exposing secrets
+# Environment variables 
 .env
 .env.local
 .env.development.local
@@ -55,7 +55,7 @@ out
 firebase-debug.log
 firebaserc
 
-# Firebase config - if you want to exclude this specific file
+# Firebase config 
 src/service/firebaseConfig.jsx
 
 # Local environment files
