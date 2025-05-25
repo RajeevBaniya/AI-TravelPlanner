@@ -8,7 +8,6 @@ Travel AI is a modern web application that leverages Google's Generative AI to c
 
 - **AI-Generated Travel Plans**: Get detailed itineraries tailored to your specific needs
 - **Personalized Recommendations**: Discover hotels, attractions, and activities based on your preferences
-- **Budget-Friendly Options**: Find travel options that match your budget constraints
 - **User Authentication**: Securely save and access your travel plans
 - **Responsive Design**: Enjoy a seamless experience across all devices
 
