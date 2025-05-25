@@ -140,26 +140,23 @@ function Header() {
           </div>
 
           <Dialog open={openDailog} onOpenChange={setOpenDailog}>
-            <DialogContent>
+            <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
                 <DialogDescription>
                   <img
                     src="/logo.png"
                     alt="Travel AI Logo"
-                    className="h-auto w-auto max-h-[28px] sm:max-h-[30px] md:max-h-[35px] lg:max-h-[50px]"
+                    className="h-auto w-auto max-h-[24px] sm:max-h-[26px] md:max-h-[30px] lg:max-h-[40px] mx-auto"
                   />
-                  <h2 className="font-bold text-lg mt-4">
-                    Sign in with Google
-                  </h2>
-                  <p className="mt-1">
+                  <h2 className="font-bold text-base mt-3 text-center">Sign in with Google</h2>
+                  <p className="mt-1 text-sm text-center">
                     Sign in to the app securely with Google authentication.
                   </p>
-
                   <Button
                     onClick={login}
-                    className="w-full mt-5 flex gap-2 items-center"
+                    className="w-full mt-4 flex gap-2 items-center justify-center bg-black text-white hover:bg-gray-800 rounded-lg text-sm py-2"
                   >
-                    <FcGoogle className="google-icon" />
+                    <FcGoogle className="w-4 h-4" />
                     Sign in with Google
                   </Button>
                 </DialogDescription>
