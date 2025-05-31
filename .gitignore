@@ -62,4 +62,3 @@ src/service/firebaseConfig.jsx
 .env*
 !.env.example
 
-
