@@ -188,7 +188,14 @@ function CreateTrip() {
           <Input
             placeholder="Ex. 3"
             type="number"
-            onChange={(e) => handleInputChange("noOfDays", e.target.value)}
+            min="1"
+            max="6"
+            onChange={(e) => {
+              // Ensure value is between 1 and 6
+              const value = Math.min(Math.max(parseInt(e.target.value) || 1, 1), 6);
+              handleInputChange("noOfDays", value.toString());
+              e.target.value = value;
+            }}
             className="h-12 text-lg rounded-xl border-gray-300 focus:ring-2 focus:ring-orange-400"
             value={formData?.noOfDays || ''}
           />
