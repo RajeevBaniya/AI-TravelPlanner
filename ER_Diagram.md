@@ -2,132 +2,80 @@
 
 This document outlines the Entity-Relationship (ER) diagram for the AI Travel Planner application. It provides a visual representation of the data model, including the entities, their attributes, and the relationships between them.
 
-## Entities and Attributes
+## Simple Explanation
 
-### 1. User
+Think of your app's data as being organized into several boxes, where each box holds a specific type of information. The ER diagram shows what these boxes are and how they are connected.
 
-Represents the users of the application who can create and manage travel plans.
+### The Boxes (Entities)
 
-| Attribute | Data Type | Description |
-| :--- | :--- | :--- |
-| **userEmail** | `String` | **Primary Key.** The unique email address of the user, obtained from Google authentication. |
-| name | `String` | The user's full name. |
-| picture | `String` | URL to the user's profile picture. |
-| given_name | `String` | The user's first name. |
-| family_name | `String` | The user's last name. |
+1.  **USER**: This box holds information about the people using your app. We identify each user by their unique `userEmail`.
+2.  **TRIP**: This is the main box for a travel plan. Each time a user creates a new plan, a new `Trip` is made with a unique `id`. It stores the user's choices, like the `location`, `budget`, and number of `noOfDays`.
+3.  **HOTEL**: This box contains the list of hotels suggested for a specific `Trip`.
+4.  **ITINERARY_DAY**: This box breaks down a `Trip` into individual days. For example, a 5-day trip will have 5 `ItineraryDay` entries.
+5.  **PLACE**: This box holds the details of a single tourist spot or activity, like the Eiffel Tower. Each `Place` is part of a specific `ItineraryDay`.
 
-### 2. Trip
+### The Connections (Relationships)
 
-Represents a travel plan created by a user.
+The lines connecting the boxes show how they relate to each other:
 
-| Attribute | Data Type | Description |
-| :--- | :--- | :--- |
-| **id** | `String` | **Primary Key.** A unique identifier for the trip, generated from the current timestamp. |
-| *userEmail* | `String` | **Foreign Key.** References the `userEmail` in the `User` entity. |
-| location | `Object` | The destination of the trip (e.g., `{ "label": "Paris, France", "value": { ... } }`). |
-| noOfDays | `Number` | The duration of the trip in days. |
-| budget | `String` | The user's budget for the trip (e.g., "Cheap", "Moderate", "Luxury"). |
-| traveler | `String` | The number or type of travelers (e.g., "1", "2 People"). |
+*   A **USER** can create many **TRIPs**.
+*   Each **TRIP** has a list of suggested **HOTELs**.
+*   Each **TRIP** is made up of several **ITINERARY_DAYs**.
+*   Each **ITINERARY_DAY** contains a list of **PLACEs** to visit.
 
-### 3. Hotel
+In short, the diagram shows that a user creates a trip, and that trip contains all the details: hotels, daily plans, and places to visit.
 
-Represents a hotel suggestion for a trip. This is part of the `tripData` JSON object but is modeled as a separate entity for clarity.
+## Formal ER Diagram (Crow's Foot Notation)
 
-| Attribute | Data Type | Description |
-| :--- | :--- | :--- |
-| **hotelName** | `String` | **Primary Key (within the context of a trip).** The name of the hotel. |
-| *tripId* | `String` | **Foreign Key.** References the `id` in the `Trip` entity. |
-| hotelAddress | `String` | The physical address of the hotel. |
-| price | `String` | The price range or cost of the hotel. |
-| hotelImageUrl | `String` | A URL to an image of the hotel. |
-| geoCoordinates | `Object` | The geographical coordinates of the hotel (latitude and longitude). |
-| rating | `Number` | The hotel's rating. |
-| description | `String` | A brief description of the hotel. |
-
-### 4. ItineraryDay
-
-Represents a single day in the trip's itinerary.
-
-| Attribute | Data Type | Description |
-| :--- | :--- | :--- |
-| **day** | `Number` | **Primary Key (within the context of a trip).** The day number of the itinerary (e.g., 1, 2, 3). |
-| *tripId* | `String` | **Foreign Key.** References the `id` in the `Trip` entity. |
-
-### 5. Place
-
-Represents a place to visit on a specific day of the itinerary.
-
-| Attribute | Data Type | Description |
-| :--- | :--- | :--- |
-| **placeName** | `String` | **Primary Key (within the context of a day).** The name of the place. |
-| *day* | `Number` | **Foreign Key.** References the `day` in the `ItineraryDay` entity. |
-| *tripId* | `String` | **Foreign Key.** References the `id` in the `Trip` entity. |
-| placeDetails | `String` | A description of the place. |
-| placeImageUrl | `String` | A URL to an image of the place. |
-| geoCoordinates | `Object` | The geographical coordinates of the place. |
-| ticketPricing | `String` | Information about ticket prices. |
-| timeToTravel | `String` | The best time to visit the place. |
-
-## Relationships
-
-*   **User to Trip**: A `User` can have multiple `Trips`. This is a **one-to-many** relationship.
-    *   `User` (1) ---< `Trip` (N)
-*   **Trip to Hotel**: A `Trip` can have multiple suggested `Hotels`. This is a **one-to-many** relationship.
-    *   `Trip` (1) ---< `Hotel` (N)
-*   **Trip to ItineraryDay**: A `Trip` consists of multiple `ItineraryDays`. This is a **one-to-many** relationship.
-    *   `Trip` (1) ---< `ItineraryDay` (N)
-*   **ItineraryDay to Place**: An `ItineraryDay` can include multiple `Places` to visit. This is a **one-to-many** relationship.
-    *   `ItineraryDay` (1) ---< `Place` (N)
-
-## ER Diagram
+This diagram uses Crow's Foot notation to clearly illustrate the relationships and cardinalities between the entities.
 
 ```mermaid
 erDiagram
     USER {
-        string userEmail PK
-        string name
-        string picture
-        string given_name
-        string family_name
+        string userEmail PK "User's Email"
+        string name "User's Full Name"
+        string picture "URL to Profile Picture"
+        string given_name "User's First Name"
+        string family_name "User's Last Name"
     }
 
     TRIP {
-        string id PK
-        string userEmail FK
-        object location
-        number noOfDays
-        string budget
-        string traveler
+        string id PK "Unique Trip ID"
+        string userEmail FK "User's Email"
+        object location "Destination"
+        number noOfDays "Duration in Days"
+        string budget "Trip Budget"
+        string traveler "Number of Travelers"
     }
 
     HOTEL {
-        string hotelName PK
-        string tripId FK
-        string hotelAddress
-        string price
-        string hotelImageUrl
-        object geoCoordinates
-        number rating
-        string description
+        string hotelName PK "Hotel Name"
+        string tripId FK "Trip ID"
+        string hotelAddress "Hotel Address"
+        string price "Price Range"
+        string hotelImageUrl "URL to Hotel Image"
+        object geoCoordinates "Geographical Coordinates"
+        number rating "Hotel Rating"
+        string description "Hotel Description"
     }
 
     ITINERARY_DAY {
-        number day PK
-        string tripId FK
+        number day PK "Day of Itinerary"
+        string tripId FK "Trip ID"
     }
 
     PLACE {
-        string placeName PK
-        number day FK
-        string tripId FK
-        string placeDetails
-        string placeImageUrl
-        object geoCoordinates
-        string ticketPricing
-        string timeToTravel
+        string placeName PK "Name of the Place"
+        number day FK "Day of Itinerary"
+        string tripId FK "Trip ID"
+        string placeDetails "Description of the Place"
+        string placeImageUrl "URL to Place Image"
+        object geoCoordinates "Geographical Coordinates"
+        string ticketPricing "Ticket Pricing"
+        string timeToTravel "Best Time to Visit"
     }
 
-    USER ||--o{ TRIP : "creates"
-    TRIP ||--o{ HOTEL : "suggests"
-    TRIP ||--o{ ITINERARY_DAY : "has"
-    ITINERARY_DAY ||--o{ PLACE : "contains"
+    USER ||--|{ TRIP : "creates"
+    TRIP ||--|{ HOTEL : "suggests"
+    TRIP ||--|{ ITINERARY_DAY : "has"
+    ITINERARY_DAY ||--|{ PLACE : "contains"
