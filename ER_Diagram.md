@@ -1,26 +1,6 @@
-# ER Diagram for the AI Travel Planner
 
-This document provides a comprehensive Entity-Relationship (ER) diagram for the AI Travel Planner application. It is designed to be clear, professional, and suitable for technical discussions or interviews.
 
-## How to Explain This Diagram in an Interview
-
-When presenting this diagram, you can walk through it with the following narrative:
-
-"This ER diagram illustrates the data model for the AI Travel Planner. The architecture is centered around the **USER**, who initiates the process.
-
-1.  A **USER** can create one or many **TRIPs**. This is a one-to-many relationship. The `userEmail` in the `TRIP` entity is a foreign key that links back to the `USER`.
-
-2.  Each **TRIP** is a central entity that holds the user's high-level planning details, such as `location`, `budget`, and `duration`.
-
-3.  For each **TRIP**, the system suggests multiple **HOTELs**. This is another one-to-many relationship, linked by the `tripId`.
-
-4.  A **TRIP** is broken down into a series of **ITINERARY_DAYs**, representing the daily schedule. This is a one-to-many relationship, also linked by `tripId`.
-
-5.  Finally, each **ITINERARY_DAY** contains multiple **PLACEs** to visit. This is the most granular part of the plan and is linked to both the `ITINERARY_DAY` and the parent `TRIP`.
-
-This normalized structure ensures data integrity, avoids redundancy, and allows for efficient querying. For example, we can easily retrieve all trips for a user, or all places for a specific day of a trip."
-
-## ER Diagram (Interview Standard)
+## ER Diagram 
 
 This diagram uses Crow's Foot notation to clearly define the relationships and cardinality between entities.
 
