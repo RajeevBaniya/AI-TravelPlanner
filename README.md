@@ -4,7 +4,7 @@ Live: - https://ai-travel-planner-indol.vercel.app/
 
 Travel AI is a modern web application that leverages Google's Generative AI to create personalized travel itineraries based on your preferences, budget and travel style.
 
-## ✨ Features
+## Features
 
 - **AI-Generated Travel Plans**: Get detailed itineraries tailored to your specific needs
 - **Personalized Recommendations**: Discover hotels, attractions, and activities based on your preferences
@@ -12,7 +12,7 @@ Travel AI is a modern web application that leverages Google's Generative AI to c
 - **Responsive Design**: Enjoy a seamless experience across all devices
 
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Frontend**: React, React Router
 - **Styling**: Tailwind CSS, Framer Motion for animations
@@ -22,7 +22,7 @@ Travel AI is a modern web application that leverages Google's Generative AI to c
 - **Build Tool**: Vite
 - **APIs**: Google Places API
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 travel-ai/
@@ -42,7 +42,7 @@ travel-ai/
 └── package.json         # Project dependencies
 ```
 
-## 🚦 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ travel-ai/
 
 5. Open your browser and navigate to `http://localhost:5173`
 
-## 🔧 Build for Production
+##  Build for Production
 
 ```bash
 npm run build
