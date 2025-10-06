@@ -5,60 +5,36 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
 # Dependencies
-node_modules
-.pnp
-.pnp.js
+node_modules/
 
 # Build outputs
-dist
-dist-ssr
-*.local
-build
+dist/
+dist-ssr/
+build/
 
-# Environment variables - IMPORTANT to avoid exposing secrets
+# Environment variables (keep secrets out of git)
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.development
-.env.production
 
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
 
-# Testing
-coverage
+# Test coverage
+coverage/
 
-# Misc
-.cache
-.parcel-cache
-.next
-out
-.nuxt
-.temp
-.docusaurus
+# Caches (common local caches)
+.cache/
+.parcel-cache/
 
-# Firebase
+# Firebase local state and logs
 .firebase/
 firebase-debug.log
-firebaserc
 
-# Firebase config - if you want to exclude this specific file
+# App-specific secret config (keep out of git)
 src/service/firebaseConfig.jsx
-
-# Local environment files
-.env*
-!.env.example
 

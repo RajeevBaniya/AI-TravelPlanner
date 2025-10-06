@@ -17,7 +17,7 @@ Travel AI is a modern web application that leverages Google's Generative AI to c
 - **Frontend**: React, React Router
 - **Styling**: Tailwind CSS, Framer Motion for animations
 - **Authentication**: Google OAuth
-- **AI Integration**: Google Gemini AI
+- **AI Integration**: Gemini AI
 - **Database**: Firebase Firestore
 - **Build Tool**: Vite
 - **APIs**: Google Places API
