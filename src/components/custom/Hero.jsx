@@ -61,16 +61,8 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Link to="/create-trip">
-                <Button className="group relative w-full sm:w-auto px-8 py-3 h-auto text-base font-semibold rounded-full transition-all duration-500 overflow-hidden bg-transparent hover:bg-transparent">
-                  <span className="relative z-10 text-black group-hover:text-white transition-colors duration-500 flex items-center justify-center">
-                    <span className="relative inline-block px-1 mx-1 group-hover:translate-y-1 transition-transform duration-500">
-                      Plan Your Trip Now
-                      <span className="absolute -bottom-2 left-0 w-full">
-                        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#F47E3E] transition-opacity duration-500 group-hover:opacity-0"></span>
-                        <span className="absolute bottom-0 left-0 w-full h-0 bg-[#F47E3E] transition-all duration-500 ease-out group-hover:h-[calc(100%+40px)] -z-10 rounded-full"></span>
-                      </span>
-                    </span>
-                  </span>
+                <Button className="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-[#F47E3E] text-[#F47E3E] bg-transparent hover:bg-[#F47E3E] hover:text-white transition-colors">
+                  Plan Your Trip Now
                 </Button>
               </Link>
             </motion.div>
@@ -329,16 +321,8 @@ function Hero() {
             viewport={{ once: true }}
           >
             <Link to="/create-trip">
-              <Button className="group relative w-full sm:w-auto px-8 py-3 h-auto text-base font-semibold rounded-full transition-all duration-500 overflow-hidden bg-transparent hover:bg-transparent mt-8 mb-0">
-                <span className="relative z-10 text-black group-hover:text-white transition-colors duration-500 flex items-center justify-center">
-                  <span className="relative inline-block px-1 mx-1 group-hover:translate-y-1 transition-transform duration-500">
-                    Explore More Destinations
-                    <span className="absolute -bottom-2 left-0 w-full">
-                      <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#F47E3E] transition-opacity duration-500 group-hover:opacity-0"></span>
-                      <span className="absolute bottom-0 left-0 w-full h-0 bg-[#F47E3E] transition-all duration-500 ease-out group-hover:h-[calc(100%+40px)] -z-10 rounded-full"></span>
-                    </span>
-                  </span>
-                </span>
+              <Button className="mt-8 mb-0 inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-[#F47E3E] text-[#F47E3E] bg-transparent hover:bg-[#F47E3E] hover:text-white transition-colors">
+                Explore More Destinations
               </Button>
             </Link>
           </motion.div>

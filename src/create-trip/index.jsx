@@ -307,21 +307,13 @@ function CreateTrip() {
                   <Button
                     disabled={loading}
                     onClick={OnGenerateTrip}
-                    className="group relative w-full sm:w-auto px-8 py-2 h-auto text-base font-semibold rounded-2xl transition-all duration-500 overflow-hidden bg-transparent hover:bg-transparent mb-10"
+                    className="mb-10 inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-[#F47E3E] text-[#F47E3E] bg-transparent hover:bg-[#F47E3E] hover:text-white transition-colors disabled:opacity-50 disabled:pointer-events-none"
                   >
-                    <span className="relative z-10 text-black group-hover:text-white transition-colors duration-500">
-                      {loading ? (
-                        <AiOutlineLoading3Quarters className="animate-spin" />
-                      ) : (
-                        <span className="relative inline-block px-1">
-                          Generate Trip
-                          <span className="absolute -bottom-1 left-0 w-full">
-                            <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#F47E3E] transition-opacity duration-500 group-hover:opacity-0"></span>
-                            <span className="absolute bottom-0 left-0 w-full h-0 bg-[#F47E3E] transition-all duration-500 ease-out group-hover:h-[calc(100%+28px)] -z-10 rounded-2xl"></span>
-                          </span>
-                        </span>
-                      )}
-                    </span>
+                    {loading ? (
+                      <AiOutlineLoading3Quarters className="animate-spin" />
+                    ) : (
+                      "Generate Trip"
+                    )}
                   </Button>
                 </div>
               </div>
