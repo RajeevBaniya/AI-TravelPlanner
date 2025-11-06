@@ -11,6 +11,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
@@ -142,24 +143,22 @@ function Header() {
           <Dialog open={openDailog} onOpenChange={setOpenDailog}>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogDescription>
-                  <img
-                    src="/logo.png"
-                    alt="Travel AI Logo"
-                    className="h-auto w-auto max-h-[24px] sm:max-h-[26px] md:max-h-[30px] lg:max-h-[40px] mx-auto"
-                  />
-                  <h2 className="font-bold text-base mt-3 text-center">Sign in with Google</h2>
-                  <p className="mt-1 text-sm text-center">
-                    Sign in to the app securely with Google authentication.
-                  </p>
-                  <Button
-                    onClick={login}
-                    className="w-full mt-4 flex gap-2 items-center justify-center bg-black text-white hover:bg-gray-800 rounded-lg text-sm py-2"
-                  >
-                    <FcGoogle className="w-4 h-4" />
-                    Sign in with Google
-                  </Button>
+                <img
+                  src="/logo.png"
+                  alt="Travel AI Logo"
+                  className="h-auto w-auto max-h-[24px] sm:max-h-[26px] md:max-h-[30px] lg:max-h-[40px] mx-auto"
+                />
+                <DialogTitle className="font-bold text-base mt-3 text-center">Sign in with Google</DialogTitle>
+                <DialogDescription className="mt-1 text-sm text-center">
+                  Sign in to the app securely with Google authentication.
                 </DialogDescription>
+                <Button
+                  onClick={login}
+                  className="w-full mt-4 flex gap-2 items-center justify-center bg-black text-white hover:bg-gray-800 rounded-lg text-sm py-2"
+                >
+                  <FcGoogle className="w-4 h-4" />
+                  Sign in with Google
+                </Button>
               </DialogHeader>
             </DialogContent>
           </Dialog>
