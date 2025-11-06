@@ -1,8 +1,8 @@
-# Travel AI - An AI-based Travel planner
+# TravelAI - Travel planner
 
 Live: - https://travelai-app.vercel.app
 
-Travel AI is a modern web application that leverages Google's Generative AI to create personalized travel itineraries based on your preferences, budget and travel style.
+TravelAI is a modern web application that leverages Google's Generative AI to create personalized travel itineraries based on your preferences, budget and travel style.
 
 ## Features
 
@@ -80,7 +80,6 @@ travel-ai/
    yarn dev
    ```
 
-5. Open your browser and navigate to `http://localhost:5173`
 
 ##  Build for Production
 
